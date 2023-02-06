@@ -6,7 +6,7 @@
   {% for line in allLines -%}
     {% if line contains "<h2" -%}
       {% assign allHeaders = allHeaders | push: line -%}
-\    {% endif -%}
+    {% endif -%}
   {% endfor -%}
 
   {% assign tocListItems = "" | split: "" -%}
