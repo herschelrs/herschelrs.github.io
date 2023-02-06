@@ -11,12 +11,13 @@ const observer = new IntersectionObserver(entries => {
   const entryFilter = entries.filter(entry => entry.isIntersecting);
   if (entryFilter.length > 0) {
     const topItem = entryFilter[entryFilter.length - 1].target
-
+console.log("fpoo")
     topItemIndex = tocList.findIndex(item => {
       return item.href.includes(topItem.id);
     });
     const topTocItem = tocList[topItemIndex];
-    
+    console.log(topTocItem)
+
     const aboveTopItem = tocList.slice(0 , topItemIndex);
     const belowTopItem = tocList.slice(topItemIndex + 1);
 
