@@ -188,7 +188,7 @@ p {
   margin-bottom: 3px;
 }
 
-li {
+.toc li {
   list-style: none;
   margin: 5px 0;
 }
@@ -198,12 +198,21 @@ li {
   color: greenyellow;
 } */
 
+.nav-list-main li {
+  padding: 5px 0;
+  padding-left: 15px;
+  border-left: 5px solid var(--accent);
+  margin: 0;
+}
+
 .nav-list-main .toc-active,
-.nav-list-main div:hover {
+.nav-list-main li:hover {
   background-color: var(--main-bg-color);
   border-left: 5px solid var(--accent-two);
-  /* background-color: cyan; */
-  /* border: 1px solid black; */
+}
+
+.toc ul {
+  padding-inline-start: 0px;
 }
 
 @media (max-width: 750px) {
@@ -248,3 +257,5 @@ li {
   height: 100%;
   border: 5px solid purple;
 } */
+
+

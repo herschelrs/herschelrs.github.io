@@ -1,0 +1,19 @@
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ul class="nav-list-main">
+  {% assign allLines = include.html | newline_to_br | split: "<br />" -%}
+  {% assign allHeaders = "" | split: "" -%}
+  {% for line in allLines -%}
+    {% if line contains "<h2" -%}
+      {% assign allHeaders = allHeaders | push: line -%}
+\    {% endif -%}
+  {% endfor -%}
+
+  {% assign tocListItems = "" | split: "" -%}
+  {% for header in allHeaders -%}
+  {% assign item = header | replace: '<h2 id="', '<a href="#' | replace_first: ">", "><li>" | replace: "</h2>", "</li></a>" %}
+  {% assign tocListItems = tocListItems | push: item %}
+  {% endfor %}
+  {{tocListItems}}
+  </ul>
+</div>
