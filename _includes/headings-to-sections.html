@@ -1,0 +1,2 @@
+{% assign plainHTML = include.html %}{% assign sections = plainHTML | split: '<h' %}{% for section in sections %}{% if section != "" %}{% assign num = section | slice: 0 %}{% capture modifiedSection %}<section{{section | remove_first: num}}{% endcapture %}{% capture heading %}><h{{num}}>{% endcapture %}{{modifiedSection | replace_first: ">", heading}}</section>
+{% endif %}{% endfor %}
