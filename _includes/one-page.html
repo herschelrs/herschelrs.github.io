@@ -1,0 +1,36 @@
+{%- assign allPageUrls = site.pages | where_exp: "page", "page.nav_exclude != true" -%}
+
+{%- assign pagesUnderThis = allPageUrls | where_exp: "page", "page.url contains include.url" -%}
+
+{%- assign directChildPages = "" | split: "" -%}
+{%- for page in pagesUnderThis -%}
+  {%- assign pageUrlFrontRemoved = page.url | remove_first: include.url -%}
+  {%- assign pageUrlSplit = pageUrlFrontRemoved | split: "/" -%}
+  {%- assign splitLength = pageUrlSplit | size -%}
+  {%- if splitLength == 1 -%}
+    {%- assign directChildPages = directChildPages | push: page -%}
+  {%- endif -%}
+
+{%- endfor -%}
+
+{%- assign sortedTocItems = directChildPages | sort: "navOrder" -%}
+
+{%- assign listSize = directChildPages | size -%}
+
+{%- if listSize > 0 %}
+{%- for page in sortedTocItems %}
+<h1>{{page.title}}</h1>
+{{page.content}}
+
+{% if page.supersection %}
+[This (super)section intentionally left blank. Scroll down for the contentful subsections!]
+{% endif %}
+
+{%- if page.url contains ".html" -%}
+{%- else -%}
+  {%- if include.recursive -%}
+  {%- include one-page.html url=page.url recursive=true -%}
+  {%- endif -%}
+{%- endif -%}
+{%- endfor %}
+{%- endif -%}
