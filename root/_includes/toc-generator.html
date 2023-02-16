@@ -1,4 +1,4 @@
-{%- assign allPageUrls = site.pages | where_exp: "page", "page.nav_exclude != true" -%}
+{%- assign allPageUrls = site.pages | where_exp: "page", "page.nav-exclude != true" -%}
 
 {%- assign pagesUnderThis = allPageUrls | where_exp: "page", "page.url contains include.url" -%}
 
@@ -26,6 +26,17 @@
   {%- if include.recursive -%}
   {%- include toc-generator.html url=page.url recursive=true -%}
   {%- endif -%}
+{%- endif -%}
+{%- if page.content contains "<h1" -%}
+  <ul>
+  {%- assign pageLines = page.content | newline_to_br | split: "<br />" -%}
+  {%- for line in pageLines -%}
+  {%- if line contains "<h1" %}
+  {% assign pageFrontSlug = page.url | prepend: 'a href="' | append: "#" %}
+  <li>{{line | replace: 'h1 id="', pageFrontSlug}}</li>
+  {%- endif -%}
+  {%- endfor -%}
+  </ul>
 {%- endif -%}
 {%- endfor %}
 </ul>

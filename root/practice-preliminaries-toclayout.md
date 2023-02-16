@@ -1,6 +1,7 @@
 ---
-title: Practice Preliminaries
+title: Practice Preliminaries (one page with autoscroll TOC)
 layout: default-toc
+navOrder: 11
 ---
 
 # timeline, mindset, trajectory, harm:
