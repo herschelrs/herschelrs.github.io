@@ -1,6 +1,6 @@
 ---
-title: Practice Preliminaries
-layout: page-default
+title: Practice Preliminaries (one page)
+navOrder: 10
 ---
 
 # timeline, mindset, trajectory, harm:

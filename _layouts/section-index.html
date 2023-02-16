@@ -14,6 +14,12 @@
   <div class="main-center">
     <h1 class="page-title">{{page.title}}</h1>
     {{content}}
+    {%- if page.zero-content-index -%}
+    <h1>This page is an index for the below sections:</h1>
+    {% endif -%}
+    <div class="section-index-toc">
+    {%- include toc-generator.html url=page.url recursive=true %}
+    </div>
   </div>
   </div>
 </body>

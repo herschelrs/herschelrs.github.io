@@ -1,4 +1,4 @@
-{%- assign allPageUrls = site.pages | where_exp: "page", "page.nav_exclude != true" -%}
+{%- assign allPageUrls = site.pages | where_exp: "page", "page.nav-exclude != true" -%}
 
 {%- assign pagesUnderThis = allPageUrls | where_exp: "page", "page.url contains include.url" -%}
 
