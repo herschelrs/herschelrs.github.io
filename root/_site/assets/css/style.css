@@ -346,14 +346,26 @@ p {
     all: unset;
   }
 
-  .toc,
-  .toc-backdrop {
-    display: none;
+  .toc {
+    transform: translateX(-100%);
+    transition: transform .18s ease-out;
   }
 
-  .toc.active,
+  .toc-backdrop {
+    /* display: none; */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+
+  .toc.active {
+    transform: translateX(0%);
+    transition: transform .28s ease-in-out;
+  }
   .toc-backdrop.active {
     display: block;
+    opacity: 0.5;
+    pointer-events: all;
   }
 
   .main {
@@ -417,7 +429,6 @@ p {
     bottom: 0;
     z-index: 10;
     background-color: darkgrey;
-    opacity: 0.5;
   }
 
   .hidden {
