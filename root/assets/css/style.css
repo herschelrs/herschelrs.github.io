@@ -372,6 +372,7 @@ p {
     z-index: 10;
   }
 
+
   .title {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -401,7 +402,8 @@ p {
   .toc {
     background-color: var(--side-bg-color);
     z-index: 10;
-    width: 75vw;
+    /* width: 75vw; */
+    width: auto;
     overflow-y: scroll;
     height: calc(100vh - var(--mobile-header-size));
     position: fixed;
@@ -411,9 +413,13 @@ p {
     padding-right: 2em;
     border-top: 3px solid var(--main-bg-color);
   }
+
+  .toc::backdrop {
+    background-color: red;;
+  }
   
   .nav-list-main {
-    max-width: none;
+    /* max-width: 30ch; */
   }
 
   .sidebar {
@@ -426,6 +432,26 @@ p {
   
   .toc-mobile-nav > .sidebar {
     display: flex;
+  }
+
+  .headroom--unpinned {
+    transform: translateY(-100%)
+  }
+
+  .headroom--pinned {
+    transform: translateY(0);
+  }
+
+  /* nonsense, mostly broken */
+   
+  .main-center {
+    overflow: hidden;
+    color: red;
+  }
+
+  .hamburger-checkbox:checked ~ .main-center {
+    overflow: hidden;
+    color: color;
   }
   
 }
