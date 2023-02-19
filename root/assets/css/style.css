@@ -87,7 +87,6 @@ svg {
 
 .page-title {
   font-size: 32px;
-  margin-top: 35px;
 }
 
 h1 {
@@ -361,6 +360,7 @@ p {
   .toc.active {
     transform: translateX(0%);
     transition: transform .28s ease-in-out;
+    box-shadow: 0px 0px 30px rgba(0,0,0,.16);
   }
   .toc-backdrop.active {
     display: block;
@@ -404,7 +404,6 @@ p {
 
   .main-center {
     background-color: var(--main-bg-color);
-    padding-top: 35px;
   }
 
   .hamburger {
@@ -445,7 +444,6 @@ p {
     overflow: auto;
     padding-left: 20px;
     padding-right: 2em;
-    box-shadow: 0px 0px 30px rgba(0,0,0,.16);
   }
   
   .nav-list-main {
@@ -473,9 +471,17 @@ p {
     box-shadow: 0px 2px 3px rgba(0,0,0,.1);
   }
 
+  .main-center {
+    padding-top: 35px;
+  }
+
+  .page-title {
+    margin-top: 35px;
+  }
+
   html,
   body {
     scroll-padding-top: var(--mobile-header-size)
-}
+  }
   
 }
