@@ -60,16 +60,12 @@ body {
   margin-top: 50px;
 }
 
-.hamburger-checkbox {
-  display: none;
-}
-
-.hamburger-label {
+.hamburger {
   display: none;
 }
 
 svg {
-  padding: 0;
+  display: block;
 }
 
 .toc hr {
@@ -90,7 +86,8 @@ svg {
 }
 
 .page-title {
-  font-size: 32px;  
+  font-size: 32px;
+  margin-top: 35px;
 }
 
 h1 {
@@ -349,9 +346,14 @@ p {
     all: unset;
   }
 
-  .hamburger-checkbox:checked ~ .toc,
-  .hamburger-checkbox:checked ~ nav {
+  .toc,
+  .toc-backdrop {
     display: none;
+  }
+
+  .toc.active,
+  .toc-backdrop.active {
+    display: block;
   }
 
   .main {
@@ -367,11 +369,14 @@ p {
     width: 100%;
     height: var(--mobile-header-size);
     background-color: var(--side-bg-color);
-    border-bottom: 3px solid var(--main-bg-color);
+    /* border-bottom: 3px solid var(--main-bg-color); */
     transition: transform .2s ease-in-out;
-    z-index: 10;
+    z-index: 5;
   }
 
+  .no-scroll {
+    overflow: hidden;
+  }
 
   .title {
     grid-column: 1 / -1;
@@ -382,7 +387,7 @@ p {
   .main-center {
     grid-column: 1 / -1;
     padding-inline: 2em;
-    margin-top: 35px;
+    /* margin-top: 35px; */
   }
 
   .main-center {
@@ -390,36 +395,50 @@ p {
     padding-top: 35px;
   }
 
-  .hamburger-label {
+  .hamburger {
     display: block;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
-    margin-inline: 15px;
+    margin-inline: 10px;
     place-self: center;
+    border: none;
+    aspect-ratio: 1;
+    padding: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 25%;
   }
 
-  
+  .toc-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: darkgrey;
+    opacity: 0.5;
+  }
+
+  .hidden {
+    display: none;
+  }
+    
   .toc {
     background-color: var(--side-bg-color);
-    z-index: 10;
-    /* width: 75vw; */
+    z-index: 11;
     width: auto;
     overflow-y: scroll;
-    height: calc(100vh - var(--mobile-header-size));
+    height: 100vh;
     position: fixed;
-    top: var(--mobile-header-size);
     overflow: auto;
     padding-left: 20px;
     padding-right: 2em;
-    border-top: 3px solid var(--main-bg-color);
-  }
-
-  .toc::backdrop {
-    background-color: red;;
+    box-shadow: 0px 0px 30px rgba(0,0,0,.16);
   }
   
   .nav-list-main {
-    /* max-width: 30ch; */
+    margin-bottom: 1em;
   }
 
   .sidebar {
@@ -440,18 +459,12 @@ p {
 
   .headroom--pinned {
     transform: translateY(0);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.1);
   }
 
-  /* nonsense, mostly broken */
-   
-  .main-center {
-    overflow: hidden;
-    color: red;
-  }
-
-  .hamburger-checkbox:checked ~ .main-center {
-    overflow: hidden;
-    color: color;
-  }
+  html,
+  body {
+    scroll-padding-top: var(--mobile-header-size)
+}
   
 }
