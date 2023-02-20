@@ -267,7 +267,36 @@ p {
 .main-center ul ul {
   margin-bottom: 0;
 }
- 
+
+.one-page-link {
+  display: none;
+  font-weight: 400;
+  font-style: italic;
+  /* font-size: 20px;  */
+}
+
+.one-page-section-title h1 {
+  display: inline;
+  margin-inline-end: .75em;
+}
+
+.one-page-section-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.one-page-section-title a:hover {
+  text-decoration: underline;
+}
+
+.one-page-section-title:hover .one-page-section-title-link {
+  text-decoration: underline;
+}
+
+.one-page-section-title:hover > .one-page-link {
+  display: inline;
+}
+
 @media (max-width: 1230px) {
   .main {
     grid-template-columns: auto ;
