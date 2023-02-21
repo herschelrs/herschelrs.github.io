@@ -1,6 +1,13 @@
 <h1 class="page-title">{{include.title}}</h1>
 {%- assign plainHTML = include.html -%}
 {%- assign sections = plainHTML | split: '<h' -%}
+
+{% assign firstSectionSize = sections | first | size %}
+{% if firstSectionSize > 0 %}
+{{sections | first}}
+{% assign sections = sections | shift %}
+{% endif %}
+
 {%- for section in sections -%}
 {%- if section != "" -%}
 {%- assign num = section | slice: 0 -%}
