@@ -268,7 +268,7 @@ p {
   margin-bottom: 0;
 }
 
-.one-page-link {
+.standalone-page-link {
   display: none;
   font-weight: 400;
   font-style: italic;
@@ -293,7 +293,16 @@ p {
   text-decoration: underline;
 }
 
-.one-page-section-title:hover > .one-page-link {
+.one-page-section-title:hover > .standalone-page-link {
+  display: inline;
+}
+
+.section-link-icon {
+  display: none;
+  font-weight: 400;
+}
+
+.one-page-section-title:hover .section-link-icon {
   display: inline;
 }
 
