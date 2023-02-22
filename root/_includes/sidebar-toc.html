@@ -1,9 +1,9 @@
 <div class="toc">
   <div class="toc-mobile-nav ">
     {%- comment -%} this was the only way I could figure to have the toc be sticky at medium/large widths but also keep the nav in the mobile pop-out menu {%- endcomment -%}
-    {% include nav.html %}
+    {% include nav.html toc=true %}
   </div>
-  <hr>
+  {% comment %} <hr> {% endcomment %}
   <div class="toc-title">Contents</div>
   <ul class="nav-list-main">
   {% assign allLines = include.html | newline_to_br | split: "<br />" -%}
