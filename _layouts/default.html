@@ -11,6 +11,7 @@
   <div class="main">
   {% include title.html %}
   {% include nav.html %}
+  {% include toc-div-no-toc.html %}
   <div class="main-center">
     <h1 class="page-title">{{page.title}}</h1>
     {{content}}
@@ -18,3 +19,4 @@
   </div>
 </body>
 </html>
+{% include scripts.html %}
