@@ -10,7 +10,7 @@
 <body>
   <div class="main">
   {% include title.html %}
-  {% include nav.html %}
+  {% include nav.html toc=true %}
   {% include sidebar-toc.html html=content %}
   <div class="main-center">
     {% include headings-to-sections.html html=content title=page.title %}
