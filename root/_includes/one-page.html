@@ -21,7 +21,7 @@
 {%- for page in sortedTocItems %}
 <div class="one-page-section-title" id="{{page.title | slugify}}">
   <h1>
-    <a class="one-page-section-title-link" href="#{{page.title | slugify}}">{{page.title}}<span class="section-link-icon">#</span></a>
+    <a class="one-page-section-title-link" href="#{{page.title | slugify}}"><span class="one-page-section-title-text">{{page.title}}</span><span class="section-link-icon">#</span></a>
   </h1>
   <a class="standalone-page-link" href="{{page.url}}">read as standalone page</a>
 </div>
