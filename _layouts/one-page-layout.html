@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include links.html %}
+  <title>{{page.title}}</title>
+</head>
+<body>
+  <div class="main">
+  {% include title.html %}
+  {% include nav.html %}
+  {% include toc-div-one-page.html %}
+  <div class="main-center">
+    <h1 class="page-title">{{page.title}}</h1>
+    {{content}}
+  </div>
+  </div>
+</body>
+</html>
+{% include scripts.html %}
+<script src="/assets/js/one-page-navigation.js"></script>
