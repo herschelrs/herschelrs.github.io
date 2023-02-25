@@ -19,10 +19,15 @@
 
 {%- if listSize > 0 %}
 {%- for page in sortedTocItems %}
-<h1>{{page.title}}</h1>
+<div class="one-page-section-title" id="{{page.title | slugify}}">
+  <h1>
+    <a class="one-page-section-title-link" href="#{{page.title | slugify}}"><span class="one-page-section-title-text">{{page.title}}</span><span class="section-link-icon">#</span></a>
+  </h1>
+  <a class="standalone-page-link" href="{{page.url}}">read as standalone page</a>
+</div>
 {{page.content}}
 
-{% if page.supersection %}
+{% if page.zero-content-index %}
 [This (super)section intentionally left blank. Scroll down for the contentful subsections!]
 {% endif %}
 
