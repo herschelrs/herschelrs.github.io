@@ -78,7 +78,7 @@ svg {
   border: none;
   border-top: 3px solid var(--main-bg-color);
   margin-top: 25px;
-  max-width: calc(27ch + 20px);
+  /* max-width: calc(27ch + 20px); */
   margin-left: 6px;
 }
 
@@ -99,12 +99,15 @@ svg {
 
 .page-title {
   font-size: 32px;
+  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 h1 {
   font-weight: 600;
   font-size: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 12px;
+  margin-top: 1.5em;
   line-height: 50px;
 }
 
@@ -125,7 +128,7 @@ h6 {
 }
 
 .frontpage-title {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 40px;
   margin-bottom: 85px;
   line-height: 70px;
@@ -156,17 +159,21 @@ h6 {
   color: var(--text);
 }
 
+.title a:hover {
+  text-decoration: underline;
+}
+
 .recent-changes-link {
   margin-top: 100px;
 }
 
 /* .center-navigation {
   margin-top: 70px;
-}
+} */
 
 .center-navigation > * {
   margin: 30px;
-} */
+}
 
 .sidebar {
   display: flex;
@@ -320,7 +327,7 @@ p {
 
 @media (max-width: 1230px) {
   .main {
-    grid-template-columns: auto ;
+    grid-template-columns: minmax(auto, 800px) 1fr;
     grid-template-rows: auto auto auto 1fr;
   }
 
@@ -332,11 +339,15 @@ p {
   .sidebar {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    margin-right: 1.5em;
   }
 
   .sidebar-hr {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+    max-width: none;
+    width: 100%;
+    margin-inline: 30px;
   }
 
   .toc {
@@ -363,8 +374,19 @@ p {
     max-width: 27ch;
   }
 
-  .sidebar {
-    margin-left: 35px;
+  .sidebar, .headroom {
+    margin-inline: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  .main.homepage {
+    grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  .homepage .main-center {
+    grid-column: 2 / 3;
   }
 
   .sidebar-link {
@@ -386,6 +408,10 @@ p {
 
   .main-center {
     padding-inline: 30px;
+    /* padding-inline: 2em; */
+    /* padding-inline: minmax(30px, 10vw); */
+    /* make the padding-inline increase with the page, with a minimum value of 30px */
+    /* padding-inline: clamp(30px, 15vw, 2em); */
   }
 
   .nav-list-main {
@@ -528,7 +554,6 @@ p {
 
   .sidebar-hr {
     margin-right: 20px;
-    margin-left: 20px;
   }
 
 
