@@ -4,6 +4,8 @@
   --text: black;
   --accent: #4d7fd1;
   --accent-two: #acc2e8;
+  --accent-three: #5c6f93;
+  --accent-four: #3570d2;
   --mobile-header-size: 3em;
 }
 
@@ -172,10 +174,6 @@ h6 {
   margin-top: 100px;
 }
 
-/* .center-navigation {
-  margin-top: 70px;
-} */
-
 .center-navigation > * {
   margin: 30px;
 }
@@ -206,22 +204,6 @@ h6 {
 .sidebar-link:hover {
   text-decoration: underline;
 }
-
-/* 
-#back {
-  margin-top: 30px;
-  width: fit-content;
-  margin-left: auto;
-} */
-
-/* nav > a,
-.sidebar-home {
-  padding-right: 10px;
-} */
-
-/* .sidebar-home:hover {
-  text-decoration: underline;
-} */
 
 p {
   margin-bottom: 1em;
@@ -264,17 +246,6 @@ p {
   display: none
 }
 
-/* .past-scroll {
-  background-color: var(--main-bg-color);
-  color: greenyellow;
-} */
-
-/* .nav-list-main li {
-  padding: 5px 0;
-  padding-left: 15px;
-  border-left: 5px solid var(--accent);
-  margin: 0;
-} */
 
 .toc .toc-active,
 .toc li:hover {
@@ -332,6 +303,14 @@ p {
 
 .one-page-section-title:hover .section-link-icon {
   display: inline;
+}
+
+.main-center a {
+  color: var(--accent-four);
+}
+
+.main-center a:visited {
+  color: var(--accent-three);
 }
 
 @media (max-width: 1230px) {
