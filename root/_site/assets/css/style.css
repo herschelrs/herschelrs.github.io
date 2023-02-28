@@ -4,8 +4,8 @@
   --text: black;
   --accent: #4d7fd1;
   --accent-two: #acc2e8;
-  --accent-three: #5c6f93;
-  --accent-four: #3570d2;
+  --accent-three: #536484;
+  --accent-four: #1e5cc1;
   --mobile-header-size: 3em;
 }
 
@@ -94,11 +94,17 @@ svg {
   position: sticky;
   top: 0px;
   align-self: start;
-  max-height: 100vh;
-  padding-bottom: 1em;
+  /* max-height: 100vh; */
+  /* padding-bottom: 1em; */
   padding-top: 25px;
-  overflow-y: auto;
   margin-top: 125px;
+  /* overflow-y: auto; */
+}
+
+.nav-list-main {
+  overflow-y: auto;
+  max-height: calc(100vh - 60px - 1em);
+  /* padding-bottom: 1em; */
 }
 
 .main-center .page-title {
@@ -232,6 +238,20 @@ p {
   margin-bottom: 3px;
 }
 
+.current-section {
+  margin-left: 5px;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.current-section a {
+  color: var(--accent-four);
+}
+
+.current-section a:visited {
+  color: var(--accent-four)
+}
+
 .toc li {
   list-style: none;
   margin: 5px 0;
@@ -279,8 +299,14 @@ p {
   margin-inline-end: .75em;
 }
 
-.one-page-section-title a {
+.one-page-section-title .one-page-section-title-link,
+.one-page-section-title .standalone-page-link {
   text-decoration: none;
+  color: inherit;
+}
+
+.one-page-section-title .one-page-section-title-link:visited,
+.one-page-section-title .standalone-page-link:visited {
   color: inherit;
 }
 
@@ -398,13 +424,21 @@ p {
     margin-right: auto;
   }
 
+  .toc {
+    padding-right: 15px;
+  }
+
   .toc-title {
     /* padding-left: 10px; */
     padding: 0;
     text-align: center;
     margin-left: 0;
     margin-bottom: 5px;
-    margin-right: 15px;
+    /* margin-right: 15px; */
+  }
+
+  .current-section {
+    text-align: center;
   }
 
   .toc li {
