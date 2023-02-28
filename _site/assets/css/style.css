@@ -408,7 +408,7 @@ p {
 
   .main.homepage {
     grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: auto auto auto 1fr;
+    /* grid-template-rows: auto auto auto 1fr; */
   }
 
   .homepage .main-center {
@@ -455,8 +455,17 @@ p {
 } 
 
 @media (max-width: 800px) {
+  .main.homepage {
+    grid-template-columns: auto;
+  }
+
   .toc, .main-center, .headroom {
     all: unset;
+  }
+
+  .main-center {
+    min-height: 100vh;
+    box-sizing: border-box;
   }
 
   .sidebar,
